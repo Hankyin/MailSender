@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/icon">
+        <file>image/attachment.png</file>
+        <file>image/send.png</file>
+        <file>image/translate.png</file>
+        <file>image/emoji.png</file>
+        <file>image/file.png</file>
+        <file>image/img.png</file>
+    </qresource>
+</RCC>

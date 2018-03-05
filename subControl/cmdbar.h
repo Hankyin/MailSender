@@ -5,6 +5,7 @@
 #include <QPushButton>
 #include <QToolButton>
 #include <QStringList>
+#include "emojipicker.h"
 
 class CmdBar : public QWidget
 {
@@ -16,16 +17,18 @@ signals:
     void sendMailClick();
     void translateClick(const QString language);
     void attachmentClick();
-    void emojiClick();
+    void emojiClick(QString emoji);
 public slots:
 
 private slots:
     void selectTranslateLanguage();
+    void showEmojiPicker();
 private:
     QPushButton *btSend;
     QToolButton *btTranslate;
     QToolButton *btEmoji;
     QToolButton *btAttachment;
+    EmojiPicker *emojiPicker;
 };
 
 #endif // CMDBAR_H

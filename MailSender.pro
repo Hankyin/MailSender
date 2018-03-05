@@ -31,7 +31,8 @@ SOURCES += \
     subControl/maileditor.cpp \
     utils/flowlayout.cpp \
     subControl/cmdbar.cpp \
-    utils/translator.cpp
+    utils/translator.cpp \
+    subControl/emojipicker.cpp
 
 HEADERS += \
     mailsender.h \
@@ -40,7 +41,8 @@ HEADERS += \
     subControl/maileditor.h \
     utils/flowlayout.h \
     subControl/cmdbar.h \
-    utils/translator.h
+    utils/translator.h \
+    subControl/emojipicker.h
 
 RESOURCES += \
     resource.qrc

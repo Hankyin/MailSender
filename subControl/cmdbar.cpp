@@ -45,6 +45,7 @@ CmdBar::CmdBar(QWidget *parent) : QWidget(parent)
     btAttachment->setIcon(QIcon(":/icon/image/attachment.png"));
     btAttachment->setAutoRaise(true);
     btAttachment->setToolTip("插入附件");
+    emojiPicker = nullptr;
 
     QHBoxLayout *layout = new QHBoxLayout;
     layout->addWidget(btSend);
@@ -55,7 +56,7 @@ CmdBar::CmdBar(QWidget *parent) : QWidget(parent)
     this->setLayout(layout);
 
     connect(this->btSend,SIGNAL(clicked(bool)),this,SIGNAL(sendMailClick()));
-    connect(this->btEmoji,SIGNAL(clicked(bool)),this,SIGNAL(emojiClick()));
+    connect(this->btEmoji,SIGNAL(clicked(bool)),this,SLOT(showEmojiPicker()));
     connect(this->btAttachment,SIGNAL(clicked(bool)),this,SIGNAL(attachmentClick()));
 }
 
@@ -77,4 +78,14 @@ void CmdBar::selectTranslateLanguage()
 {
     QAction *act = qobject_cast<QAction*>(QObject::sender());//使用sender()获取发送消息的action
     emit translateClick(act->text());
+}
+
+void CmdBar::showEmojiPicker()
+{
+    if(emojiPicker == nullptr)
+    {
+        emojiPicker = new EmojiPicker();
+
+    }
+    emojiPicker->show();
 }
